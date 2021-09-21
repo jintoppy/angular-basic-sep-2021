@@ -2,7 +2,19 @@ Hello
 
 again
 
-<button>Hello</button>
+<h1 *ngIf="isDisabled">{{title}} adf</h1>
+
+<h2>{{name}}</h2>
+
+<button (click)="onBtnClick()">Button1</button>
+
+<button [disabled]="isDisabled">Button2</button>
+
+<ul>
+    <li *ngFor="let abc of fruits">
+        {{abc}}
+    </li>
+</ul>
 
 <app-mybutton></app-mybutton>
 

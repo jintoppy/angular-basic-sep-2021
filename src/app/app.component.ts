@@ -7,4 +7,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-basic';
+
+  name = 'MEAN'
+
+  isDisabled = true;
+
+  fruits = ['Apple', 'Banana', 'Jackfruit']
+
+  users = [
+    { name: 'User1', age: 10},
+    { name: 'User2', age: 20},
+    { name: 'User3', age: 30}
+  ]
+
+  onBtnClick(){
+    this.isDisabled = !this.isDisabled;
+  }
 }
