@@ -20,7 +20,8 @@ export class AppComponent {
     { name: 'User3', age: 30}
   ]
 
-  onBtnClick(){
+  onBtnClick(evnt: MouseEvent){
+    console.log((evnt.target as HTMLButtonElement).id);
     this.isDisabled = !this.isDisabled;
   }
 }

@@ -6,7 +6,8 @@ again
 
 <h2>{{name}}</h2>
 
-<button (click)="onBtnClick()">Button1</button>
+<button id="mybtn1" (click)="onBtnClick($event)">Button1</button>
+<button id="mybtn2" (click)="onBtnClick($event)">Button2</button>
 
 <button [disabled]="isDisabled">Button2</button>
 
@@ -15,6 +16,23 @@ again
         {{abc}}
     </li>
 </ul>
+
+<table>
+    <thead>
+        <tr>
+            <th>Sr #</th>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.age}}</td>
+        </tr>
+    </tbody>
+</table>
 
 <app-mybutton></app-mybutton>
 
