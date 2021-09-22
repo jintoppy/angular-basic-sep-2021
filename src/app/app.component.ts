@@ -24,11 +24,21 @@ export class AppComponent implements OnInit {
     { name: 'Lakshmi', age: 30}
   ]
 
-  filteredUsers = [...this.users]
+  dummyUsers: User[] = [
+    { name: 'Dummy1', age: 10},
+    { name: 'Dummy2', age: 20},
+    { name: 'Dummy3', age: 30}
+  ]
 
-  selectUser(user: User){
+  onUserSelect(user:User){
     this.selectedUser = user;
   }
+
+  onDummySelect(evntValue:User){
+    console.warn('dummy select called', evntValue);
+  }
+
+  filteredUsers = [...this.users]
 
   searchTxt = '';
 
