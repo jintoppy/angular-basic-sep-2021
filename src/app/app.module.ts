@@ -4,12 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { MybuttonComponent } from './mybutton/mybutton.component';
 import { SlideshowComponent } from './components/slideshow/slideshow.component';
+import { SelectedUserComponent } from './components/selected-user/selected-user.component';
+import { UserListComponent } from './components/user-list/user-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MybuttonComponent,
-    SlideshowComponent
+    SlideshowComponent,
+    SelectedUserComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,

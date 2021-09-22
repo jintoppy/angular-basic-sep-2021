@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-type User = {
-  name: string;
-  age: number;
-}
+import { User } from './models/user';
 
 @Component({
   selector: 'my-app',

@@ -3,32 +3,7 @@
 
 {{inputVal}}
 
-<table>
-    <thead>
-        <tr>
-            <th>Sr #</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>View</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let user of filteredUsers; let i = index;">
-            <td>{{i+1}}</td>
-            <td>{{user.name}}</td>
-            <td>{{user.age}}</td>
-            <td>
-                <button (click)="selectUser(user)">Select</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<app-user-list></app-user-list>
+<app-selected-user [user]="selectedUser"></app-selected-user>
 
-<div *ngIf="selectedUser">
-    <h2>
-        Selected User
-    </h2>
 
-    <p>Name: {{selectedUser.name}}</p>
-    <p>Age: {{selectedUser.age}}</p>
-</div>
