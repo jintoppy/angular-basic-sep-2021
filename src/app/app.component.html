@@ -1,5 +1,7 @@
-<input type="text" #myInput>
-<button (click)="search(myInput.value)" #myBtn>Search</button>
+<input type="text" [(ngModel)]="inputVal">
+<button (click)="search()" #myBtn>Search</button>
+
+{{inputVal}}
 
 <table>
     <thead>
@@ -11,7 +13,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let user of users; let i = index;">
+        <tr *ngFor="let user of filteredUsers; let i = index;">
             <td>{{i+1}}</td>
             <td>{{user.name}}</td>
             <td>{{user.age}}</td>
@@ -30,4 +32,3 @@
     <p>Name: {{selectedUser.name}}</p>
     <p>Age: {{selectedUser.age}}</p>
 </div>
-

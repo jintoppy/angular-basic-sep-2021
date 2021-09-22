@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 type User = {
   name: string;
@@ -10,8 +10,17 @@ type User = {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  inputVal = '';
   selectedUser?:User;
+
+  constructor(){
+    console.log('within constructor');
+  }
+
+  ngOnInit(){
+    console.log('within ngOnInit');
+  }
 
   users: User[] = [
     { name: 'Arjun', age: 10},
@@ -19,14 +28,18 @@ export class AppComponent {
     { name: 'Lakshmi', age: 30}
   ]
 
+  filteredUsers = [...this.users]
+
   selectUser(user: User){
     this.selectedUser = user;
   }
 
   searchTxt = '';
 
-  search(val: string){
-    this.searchTxt = val;
+  search(){
+    this.filteredUsers = this.users.filter(u => {
+      return u.name.includes(this.inputVal);
+    });
   }
 
   

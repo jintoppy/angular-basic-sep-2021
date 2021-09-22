@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { MybuttonComponent } from './mybutton/mybutton.component';
 import { SlideshowComponent } from './components/slideshow/slideshow.component';
@@ -12,7 +12,8 @@ import { SlideshowComponent } from './components/slideshow/slideshow.component';
     SlideshowComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
