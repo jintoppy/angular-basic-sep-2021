@@ -1,27 +1,33 @@
 import { Component } from '@angular/core';
 
+type User = {
+  name: string;
+  age: number;
+}
+
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-basic';
+  selectedUser?:User;
 
-  name = 'MEAN'
-
-  isDisabled = true;
-
-  fruits = ['Apple', 'Banana', 'Jackfruit']
-
-  users = [
-    { name: 'User1', age: 10},
-    { name: 'User2', age: 20},
-    { name: 'User3', age: 30}
+  users: User[] = [
+    { name: 'Arjun', age: 10},
+    { name: 'Jeffrey', age: 20},
+    { name: 'Lakshmi', age: 30}
   ]
 
-  onBtnClick(evnt: MouseEvent){
-    console.log((evnt.target as HTMLButtonElement).id);
-    this.isDisabled = !this.isDisabled;
+  selectUser(user: User){
+    this.selectedUser = user;
   }
+
+  searchTxt = '';
+
+  search(val: string){
+    this.searchTxt = val;
+  }
+
+  
 }

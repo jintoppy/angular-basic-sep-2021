@@ -1,3 +1,6 @@
+<input type="text" #myInput>
+<button (click)="search(myInput.value)" #myBtn>Search</button>
+
 <table>
     <thead>
         <tr>
@@ -13,18 +16,18 @@
             <td>{{user.name}}</td>
             <td>{{user.age}}</td>
             <td>
-                <button>Select</button>
+                <button (click)="selectUser(user)">Select</button>
             </td>
         </tr>
     </tbody>
 </table>
 
-<div>
+<div *ngIf="selectedUser">
     <h2>
         Selected User
     </h2>
 
-    <p>Name: </p>
-    <p>Age: </p>
+    <p>Name: {{selectedUser.name}}</p>
+    <p>Age: {{selectedUser.age}}</p>
 </div>
 
