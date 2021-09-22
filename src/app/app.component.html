@@ -1,30 +1,10 @@
-Hello
-
-again
-
-<h1 *ngIf="isDisabled">{{title}} adf</h1>
-
-<h2 [ngStyle]="{'color': isDisabled ? 'red' : 'green'}">{{name}}</h2>
-
-<h2 [ngClass]="{'header': true, 'abc': isDisabled}">{{name}}</h2>
-
-<button id="mybtn1" (click)="onBtnClick($event)">Button1</button>
-<button id="mybtn2" (click)="onBtnClick($event)">Button2</button>
-
-<button [disabled]="isDisabled">Button2</button>
-
-<ul>
-    <li *ngFor="let abc of fruits">
-        {{abc}}
-    </li>
-</ul>
-
 <table>
     <thead>
         <tr>
             <th>Sr #</th>
             <th>Name</th>
             <th>Age</th>
+            <th>View</th>
         </tr>
     </thead>
     <tbody>
@@ -32,10 +12,19 @@ again
             <td>{{i+1}}</td>
             <td>{{user.name}}</td>
             <td>{{user.age}}</td>
+            <td>
+                <button>Select</button>
+            </td>
         </tr>
     </tbody>
 </table>
 
-<app-mybutton></app-mybutton>
+<div>
+    <h2>
+        Selected User
+    </h2>
 
-<app-slideshow></app-slideshow>
+    <p>Name: </p>
+    <p>Age: </p>
+</div>
+
