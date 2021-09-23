@@ -23,12 +23,22 @@ export class ContainerComponent implements OnInit {
   catSlideshowCompleted = false;
   dogSlideshowCompleted = false;
 
+  onCatStart(){
+    this.catSlideshowCompleted = false;
+  }
   onCatComplete(){
     this.catSlideshowCompleted = true;
   }
 
   onDogComplete(){
     this.dogSlideshowCompleted = true;
+  }
+
+  onDogSlideshowEvent(evnt: {
+    type: string;
+    count: number;
+  }){
+    console.log(evnt);
   }
 
   constructor() { }

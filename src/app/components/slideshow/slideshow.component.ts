@@ -1,5 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
+type SlideshowEvent = {
+  type: string;
+  count: number;
+}
+
 @Component({
   selector: 'app-slideshow',
   templateUrl: './slideshow.component.html',
@@ -12,6 +17,12 @@ export class SlideshowComponent implements OnInit {
 
   @Output()
   onComplete: EventEmitter<void> = new EventEmitter();
+
+  @Output()
+  onStart: EventEmitter<void> = new EventEmitter();
+
+  @Output()
+  onStatusChange: EventEmitter<SlideshowEvent> = new EventEmitter<SlideshowEvent>();
 
   constructor() { 
   }
@@ -26,6 +37,7 @@ export class SlideshowComponent implements OnInit {
     if(this.activeIndex === this.imgUrls.length - 1){
       // slideshow is completed;
       this.onComplete.emit();
+      this.onStatusChange.emit({type: 'completed', count: this.imgUrls.length});
     }
   }
 
@@ -35,7 +47,8 @@ export class SlideshowComponent implements OnInit {
     }
 
     if(this.activeIndex === 0){
-      //slideshow beginning
+      this.onStart.emit();
+      this.onStatusChange.emit({type: 'started', count: this.imgUrls.length});
     }
     
   }
