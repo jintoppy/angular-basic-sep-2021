@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-type SlideshowEvent = {
+export type SlideshowEvent = {
   type: string;
   count: number;
 }

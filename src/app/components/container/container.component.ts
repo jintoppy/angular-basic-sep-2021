@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SlideshowEvent } from '../slideshow/slideshow.component';
 
 @Component({
   selector: 'app-container',
@@ -34,10 +35,7 @@ export class ContainerComponent implements OnInit {
     this.dogSlideshowCompleted = true;
   }
 
-  onDogSlideshowEvent(evnt: {
-    type: string;
-    count: number;
-  }){
+  onDogSlideshowEvent(evnt: SlideshowEvent){
     console.log(evnt);
   }
 
