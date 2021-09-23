@@ -6,6 +6,7 @@ import { MybuttonComponent } from './mybutton/mybutton.component';
 import { SlideshowComponent } from './components/slideshow/slideshow.component';
 import { SelectedUserComponent } from './components/selected-user/selected-user.component';
 import { UserListComponent } from './components/user-list/user-list.component';
+import { ContainerComponent } from './components/container/container.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { UserListComponent } from './components/user-list/user-list.component';
     MybuttonComponent,
     SlideshowComponent,
     SelectedUserComponent,
-    UserListComponent
+    UserListComponent,
+    ContainerComponent
   ],
   imports: [
     BrowserModule,
