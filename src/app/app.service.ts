@@ -1,9 +1,16 @@
 import { Injectable } from '@angular/core';
+import { User } from './models/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppService {
+
+  private users: User[] = [
+    { name: 'Arjun', age: 10},
+    { name: 'Jeffrey', age: 20},
+    { name: 'Lakshmi', age: 30}
+  ]
 
   private catImgUrls:string[]=[
     'https://ichef.bbci.co.uk/news/976/cpsprodpb/12A9B/production/_111434467_gettyimages-1143489763.jpg',
@@ -20,6 +27,10 @@ export class AppService {
   ]
 
   constructor() { }
+
+  getUsers(){
+    return this.users;
+  }
 
   getCats(){
     return this.catImgUrls;

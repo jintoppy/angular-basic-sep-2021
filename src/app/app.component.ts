@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from './models/user';
+import { AppService } from './app.service';
 
 @Component({
   selector: 'my-app',
@@ -10,19 +11,18 @@ export class AppComponent implements OnInit {
   inputVal = '';
   selectedUser?:User;
 
-  constructor(){
+  constructor(private appService: AppService){
     console.log('within constructor');
   }
 
   ngOnInit(){
     console.log('within ngOnInit');
+    this.users = this.appService.getUsers();
+    this.filteredUsers = [...this.users];
   }
 
-  users: User[] = [
-    { name: 'Arjun', age: 10},
-    { name: 'Jeffrey', age: 20},
-    { name: 'Lakshmi', age: 30}
-  ]
+  users: User[] = []
+  filteredUsers: User[] = []
 
   dummyUsers: User[] = [
     { name: 'Dummy1', age: 10},
@@ -32,13 +32,12 @@ export class AppComponent implements OnInit {
 
   onUserSelect(user:User){
     this.selectedUser = user;
+    
   }
 
   onDummySelect(evntValue:User){
     console.warn('dummy select called', evntValue);
-  }
-
-  filteredUsers = [...this.users]
+  }  
 
   searchTxt = '';
 
