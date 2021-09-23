@@ -33,6 +33,10 @@ export class SlideshowComponent implements OnInit {
     if(this.activeIndex > 0){
       this.activeIndex--;
     }
+
+    if(this.activeIndex === 0){
+      //slideshow beginning
+    }
     
   }
 
