@@ -1,3 +1,5 @@
-<button> < </button>
-    <img src="" alt="" height="150">
-<button> > </button>
+<div class="slideshow">
+    <button (click)="onPrev()"> < </button>
+    <img [src]="imgUrls[activeIndex]" alt="" height="150">
+    <button (click)="onNext()"> > </button>
+</div>
