@@ -1,3 +1,8 @@
-<app-slideshow></app-slideshow>
+<app-slideshow [imgUrls]="catImgUrls" (onComplete)="onCatComplete()"></app-slideshow>
+ <h1 *ngIf="catSlideshowCompleted">You have reached end of Cat slideshow</h1>
 
-<app-slideshow></app-slideshow>
+<app-slideshow [imgUrls]="dogImgUrls" (onComplete)="onDogComplete()"></app-slideshow>
+<div *ngIf="dogSlideshowCompleted">
+    <h2>You have seen dog slideshow fully</h2>
+    <img [src]="dogImgUrls[0]" height="400" />
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-slideshow',
@@ -6,9 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./slideshow.component.css']
 })
 export class SlideshowComponent implements OnInit {
-  
-  imgUrls=[]
+  @Input()
+  imgUrls: string[]=[]
   activeIndex = 0;
+
+  @Output()
+  onComplete: EventEmitter<void> = new EventEmitter();
+
   constructor() { 
   }
 
@@ -19,7 +23,10 @@ export class SlideshowComponent implements OnInit {
     if(this.activeIndex < this.imgUrls.length - 1){
       this.activeIndex++;
     }
-    
+    if(this.activeIndex === this.imgUrls.length - 1){
+      // slideshow is completed;
+      this.onComplete.emit();
+    }
   }
 
   onPrev(){
